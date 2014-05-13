@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    title = current_page.data.title
+    meta name="description" content=""
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    / Place favicon.ico and apple-touch-icon.png in the root directory.
+
+    = stylesheet_link_tag 'app'
+
+  body
+    /[if lte IE 7]
+      / Ancient browser notice.
+      p.browsehappy
+        | You are using an <strong>outdated</strong> browser. Please
+        a<> href="http://browsehappy.com/" upgrade your browser
+        | to improve your experience.
+
+    header
+      .logos
+        = link_to image_tag('logo.jpg', width: 160, height: 160), root_url, class: 'logo'
+
+    == yield
+
+    = javascript_include_tag '//code.jquery.com/jquery-1.11.0.min.js'
+    = javascript_include_tag 'app'
+    = partial 'partials/_google_analytics'

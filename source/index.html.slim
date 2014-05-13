@@ -1,0 +1,94 @@
+---
+title: 'Nachtschicht'
+---
+
+.wrapper
+  .content.cornered
+    = corner_tags
+
+  .navigation
+
+    nav
+      ul
+        li= link_to 'Home', '#home'
+        li= link_to 'Archiv', '#archive'
+        li= link_to 'Naechste Schicht', '#next'
+        li= link_to 'Kontakt', '#contact'
+
+    .navigation-content
+      ul
+        li#home
+          h2 Lorem ipsum dolor sit amet
+          p.left
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p.right
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        li#archive
+          h2 Archiv
+          ul.desc-images
+            li= desc_image('http://lorempixel.com/210/100?1', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?2', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?3', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?4', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?5', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?6', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?7', 'Jochen<br>5min 43sec')
+            li= desc_image('http://lorempixel.com/210/100?8', 'Jochen<br>5min 43sec')
+
+
+        li#next
+          h2 Nächste Schicht
+          p.left
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            br
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p.right
+            = image_tag 'http://lorempixel.com/440/300/'
+
+        li#contact
+          h2 Nächste Schicht
+          p.left
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            br
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          = form_tag '//api.formspree.com/formspree@dasbrot.info', method: 'post', class: 'right' do
+            = input_tag :hidden, name: '_next', value: 'back.html'
+            ul
+              li
+                = label_tag :name, required: true, caption: "Name"
+                = text_field_tag :name
+              li
+                = label_tag :_replyto, required: true, caption: "E-Mail"
+                = text_field_tag :_replyto
+              li
+                = label_tag :subject, required: true, caption: "Betreff"
+                = text_field_tag :subject
+              li
+                = label_tag :body, required: true, caption: "Nachricht"
+                = text_area_tag :body
+              li
+                = submit_tag "Absenden"
+
+  footer
+    p
+     | © by me!

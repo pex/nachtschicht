@@ -1,0 +1,209 @@
+//= require normalize-css/normalize
+//= require _erb/_syntax
+
+@import 'bourbon';
+@import 'neat';
+
+$trans-red: rgba(215, 17, 25, 0.5);
+$custom-gutter: 2.35765%;
+$offset: 25px;
+
+@include font-face(Headline, "../fonts/BEBAS___");
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+a {
+  outline: 0 !important;
+}
+
+body {
+  background: black;
+  font-size: 14px;
+  color: white;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: "Headline";
+  margin: 10px 0 0 0;
+}
+
+header, .wrapper {
+  @include outer-container;
+  padding: 0 $offset;
+}
+
+header {
+  background: url(../images/banner.png) no-repeat top right;
+  background-size: 960px 160px;
+
+  .logos {
+    @include span-columns(12);
+
+    a {
+      @include clearfix;
+
+      img {
+        float: left;
+      }
+    }
+  }
+}
+
+.wrapper {
+  background: url(../images/background.jpg) repeat-y left top;
+  padding-top: $offset;
+  background-size: 68em;
+}
+
+.content {
+  min-height: 500px;
+}
+
+.navigation {
+  @include clearfix;
+  margin: 0 (-$offset);
+
+  nav {
+    @include clearfix;
+
+    li {
+      float: left;
+
+      a {
+        display: block;
+        padding: 10px $offset;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &.active {
+          background: $trans-red;
+        }
+      }
+
+      &:first-child a {
+        padding-left: $offset;
+      }
+    }
+  }
+
+  .navigation-content {
+    @include clearfix;
+    background: $trans-red;
+    padding: 0 $offset;
+
+    > ul > li {
+      @include span-columns(12);
+      display: none;
+      padding: 10px 0;
+    }
+
+    .left, .right {
+      @include span-columns(6);
+    }
+  }
+
+  #archive {
+    ul {
+      margin-top: 15px;
+      li {
+        @include span-columns(3);
+        @include omega(4n);
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  #contact {
+    label {
+      font-family: "Headline";
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    input, textarea {
+      border: 0;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+    }
+
+    input[type=text] {
+      width: 200px;
+    }
+
+    textarea {
+      height: 150px;
+      width: 100%;
+    }
+  }
+}
+
+.cornered {
+  @include clearfix;
+  position: relative;
+
+  .corner {
+    background: url(../images/corner.png) no-repeat top right;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+
+    &.tl {
+      @include transform(scaleX(-1));
+      top: 0;
+      left: 0;
+    }
+
+    &.tr {
+      top: 0;
+      right: 0;
+    }
+
+    &.br {
+      @include transform(scaleY(-1));
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.desc-images {
+  li a {
+    display: block;
+    @include clearfix;
+    position: relative;
+
+    small {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      text-align: center;
+      font-size: 14px;
+      font-variant: normal;
+      padding-top: 20px;
+      color: white;
+    }
+
+    &:hover {
+      small {
+        display: block;
+      }
+    }
+  }
+}
