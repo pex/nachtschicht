@@ -2,12 +2,12 @@
 
 ### Install
 
-  $ bundle install
+    $ bundle install
 
 ### Run in development
 
-  $ bundle exec middleman
+    $ bundle exec middleman
 
 ### Build for production
 
-  $ bundle exec middleman build
+    $ bundle exec middleman build
