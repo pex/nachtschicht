@@ -1,3 +1,6 @@
+#= require "jquery.bxslider/plugins/jquery.fitvids.js"
+#= require "jquery.bxslider/jquery.bxslider.js"
+
 $ ->
   $navOptions = $('nav a')
   $navContents = $('.navigation-content > ul > li')
@@ -12,3 +15,7 @@ $ ->
     # handle contents
     $navContents.hide()
     $(@hash).show()
+
+
+  # Carousel
+  $('.bxslider').bxSlider video: true, useCSS: false

@@ -4,13 +4,20 @@ title: 'Nachtschicht'
 
 .wrapper
   .content.cornered
+    ul.bxslider
+      li
+        iframe{width="902" height="500" src="//www.youtube.com/embed/ToqNa0rqUtY" frameborder="0" allowfullscreen}
+      li
+        iframe{width="902" height="500" src="//www.youtube.com/embed/ToqNa0rqUtY" frameborder="0" allowfullscreen}
+
+    = partial 'partials/_social'
     = corner_tags
 
   .navigation
 
     nav
       ul
-        li= link_to 'Home', '#home'
+        li= link_to 'Home', '#home', class: :active
         li= link_to 'Archiv', '#archive'
         li= link_to 'Naechste Schicht', '#next'
         li= link_to 'Kontakt', '#contact'
