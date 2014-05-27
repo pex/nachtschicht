@@ -9,7 +9,7 @@ $trans-red: rgba(215, 17, 25, 0.5);
 $custom-gutter: 2.35765%;
 $offset: 25px;
 
-@include font-face(Headline, "../fonts/BEBAS___");
+@include font-face(Headline, "../fonts/INTRO___");
 
 ul {
   margin: 0;
@@ -21,6 +21,7 @@ ul {
     list-style-type: none;
   }
 }
+
 
 a {
   outline: 0 !important;
@@ -34,7 +35,7 @@ body {
 
 h2 {
   font-size: 18px;
-  font-family: "Headline";
+  font-family: "Intro";
   margin: 10px 0 0 0;
 }
 
@@ -130,9 +131,18 @@ header {
     }
   }
 
+
+    #impressum
+       label{
+        font-family: "Arial";
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 3px;
+      }
+
   #contact {
     label {
-      font-family: "Headline";
+      font-family: "Intro";
       text-transform: uppercase;
       display: block;
       margin-bottom: 3px;
