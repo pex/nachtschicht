@@ -4,7 +4,7 @@ module UrlHelper
     '/'
   end
 
-  def desc_image(image_url, desc)
-    link_to "#{image_tag(image_url)}<small>#{desc}</small>", "#"
+  def desc_image(image_url, desc, slide_index=nil)
+    link_to "#{image_tag(image_url)}<small>#{desc}</small>", "#", data: { 'slide-index' => slide_index }
   end
 end
